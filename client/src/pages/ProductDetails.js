@@ -67,18 +67,18 @@ const ProductDetails = () => {
           <h6>Quantity : {product.quantity}</h6>
           <h6>Category : {product?.category?.name}</h6>
           <button
-                  className="btn btn-secondary ms-1"
-                  onClick={() => {
-                    setCart([...cart]);
-                    localStorage.setItem(
-                      "cart",
-                      JSON.stringify([...cart])
-                    );
-                    toast.success("Item Added to cart");
-                  }}
-                >
-                  ADD TO CART
-                </button>
+            className="btn btn-dark ms-1"
+            onClick={() => {
+              setCart([...cart, product]);
+              localStorage.setItem(
+                "cart",
+                JSON.stringify([...cart, product])
+              );
+              toast.success("Item Added to cart");
+            }}
+          >
+            ADD TO CART
+          </button>
         </div>
       </div>
       <hr />
